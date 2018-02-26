@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head th:replace="layout :: site-head">
+        <title>Welcome to Spring MVC Blog</title>
+    </head>
+
+    <body>
+        <header th:replace="layout :: site-header" />
+        <main id="posts">
+            <table>
+                <thead>
+                    <th>Id</th>
+                    <th>Full Name</th>
+                </thead>
+                <tbody>
+                    <tr th:each="u : ${userList}">
+                        <td th:text="${u.id}"></td>
+                        <td th:text="${u.fullName}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+        <footer th:replace="layout :: site-footer" />
+    </body>
+
+</html>
